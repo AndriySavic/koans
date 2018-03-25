@@ -98,3 +98,13 @@ class AboutSymbols < Neo::Koan
   #
   # Why is it not a good idea to dynamically create a lot of symbols?
 end
+
+
+
+ #My
+  def test_2
+    symbol1 = :a_symbol
+    symbol2 = :a_symbol
+
+    assert_equal false, symbol1 == symbol2.to_s
+end

@@ -17,6 +17,20 @@ class AboutScope < Neo::Koan
     end
   end
 
+
+
+#my variant
+  module Jhon
+    class Dog
+      def identify
+        :jhons_dog
+      end
+    end
+  end
+
+
+
+
   def test_dog_is_not_available_in_the_current_scope
     assert_raise(NameError) do
       Dog.new

@@ -184,7 +184,26 @@ class AboutMessagePassing < Neo::Koan
 
 end
 
+#я написав метод,
+ #який перевіряє, чи отримане число просте. Я навчився
+  #працювати із циклами, методами і умовними операторами.
 
+  def prost?(a)
+    i=2
+    b=true
+    while i<a
+      if a%i==0
+        b=false
+      end
+      i=i+1
+    end
+    b
+  end
+
+  def test_prost
+    assert_equal true,prost?(7)
+    assert_equal false,prost?(16)
+end 
 
 
 

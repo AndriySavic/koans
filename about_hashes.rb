@@ -25,6 +25,14 @@ class AboutHashes < Neo::Koan
     assert_equal "uno", hash.fetch(:one)
     assert_raise(Exception) do
       hash.fetch(:doesnt_exist)
+
+
+      # my variant
+
+     assert_equal hash[:doesnt_exist] ,hash.fetch(:doesnt_exist, nil)
+
+
+
     end
 
     # THINK ABOUT IT:
@@ -56,6 +64,17 @@ class AboutHashes < Neo::Koan
     assert_equal true, hash.keys.include?(:one)
     assert_equal true, hash.keys.include?(:two)
     assert_equal Array, hash.keys.class
+
+
+
+    # my variant
+
+    assert_equal false , hash.values.include?("one")
+    assert_equal false, hash.values.include?("two")
+    assert_equal false , hash.values.include?(:one)
+    assert_equal false , hash.values.include?(:two)
+
+
   end
 
   def test_hash_values

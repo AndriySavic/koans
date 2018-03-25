@@ -121,3 +121,35 @@ class AboutIteration < Neo::Koan
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
 
 end
+
+
+ #my
+  def test_2
+    array = [5, 10, 15]
+    sum = 0
+    array.each { |item| sum += item + 3 }
+    assert_equal 39, sum
+end
+
+#я написав метод, який отримує 
+#масив і виводить число, рівне сумі парних елементів цього 
+#масиву, та метод із тестами. Я навчився працювати з ітератором each 
+#та масивами.
+    def sum_par a
+    s=0
+    a.each do |item| 
+      if(item%2==0)
+        s+=item
+      end
+    end
+    s
+  end
+
+  def test_sum
+    x=[1,2,3,4,5,6,7,8]
+    y=[3,9,17]
+    z=[]
+    assert_equal 20,sum_par(x)
+    assert_equal 0,sum_par(y)
+    assert_equal 0,sum_par(z)
+  end

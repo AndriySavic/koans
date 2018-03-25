@@ -135,6 +135,14 @@ class AboutControlStatements < Neo::Koan
       result << item.upcase
     end
     assert_equal ["FISH", "AND", "CHIPS"], result
+
+    #my variant
+    res = []
+    for item in result
+      res << item.downcase
+    end
+   assert_equal array, res
+
   end
 
   def test_times_statement
@@ -146,3 +154,51 @@ class AboutControlStatements < Neo::Koan
   end
 
 end
+
+
+  #My
+  def test_break_2_statement
+      j=5
+    s=3
+    while true
+      s+=s%j
+      break if s>15
+      j+=3
+    end
+    assert_equal 26, s
+end
+
+ #My
+  def test_for_statement_2
+    array = ["FISH","AND", "CHIPS"]
+    result = []
+    for item in array
+      result << item.downcase if item[0]=='F'
+    end
+    assert_equal ["fish"], result
+end
+
+ #My 1
+  def test_break_if_statement
+    i=1;
+    res=[];
+    while true
+      break if i>10
+      res<<i if i%2==0
+      i+=1
+    end
+    assert_equal [2,4,6,8,10],res
+  end
+
+#My 1
+  def test_break_if_statement_return_values
+    i=1;
+    res=[];
+    result = while true
+      break res if i>10
+      res<<i if i%2==0
+      i+=1
+    end
+    assert_equal [2,4,6,8,10],res
+    assert_equal result, res
+  end

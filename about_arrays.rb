@@ -82,3 +82,15 @@ class AboutArrays < Neo::Koan
   end
 
 end
+
+
+#My
+  def test_array_literals_2
+    array = Array.new
+    array[0] = 1
+    array[1] = 2
+    array << 333
+    array[2] = 54
+    array << 150
+    assert_equal [1,2,54,150], array
+end

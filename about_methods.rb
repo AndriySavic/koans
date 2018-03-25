@@ -125,6 +125,22 @@ class AboutMethods < Neo::Koan
 
   # ------------------------------------------------------------------
 
+
+#my variant
+ class Cat
+    def name
+      "Frida"
+    end
+      private
+
+    def whiskers
+      "whiskers"
+    end
+  end
+
+
+
+
   class Dog
     def name
       "Fido"

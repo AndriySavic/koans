@@ -38,3 +38,13 @@ class AboutAsserts < Neo::Koan
     assert_equal 2, 1 + 1
   end
 end
+
+
+#My
+  def test_not_increment
+    i=0
+    i++1
+    assert_equal 0,i
+    i+=1
+    assert_equal 1,i;
+  end

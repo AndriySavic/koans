@@ -108,3 +108,31 @@ class AboutSandwichCode < Neo::Koan
   end
 
 end
+
+
+
+#я написав метод, 
+#який отримує назву файлу і літеру, а в процесі 
+#роботи рахує і повертає кількість рядків файлу, 
+#які починаються на вказану літеру. Я навчився працювати
+#із sandwich code.
+
+
+  def first_x(file_name,x)
+    file = open(file_name)
+    i=0
+    while line = file.gets
+      if line[0]==x
+        i=i+1
+      end
+    end
+    i
+  ensure
+    file.close if file
+  end
+
+  def test_first_x
+    assert_equal 2,first_x("example_file.txt",'t')
+    assert_equal 1,first_x("example_file.txt",'i')
+    assert_equal 0,first_x("example_file.txt",'c')
+  end

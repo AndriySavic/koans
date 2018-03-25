@@ -131,8 +131,6 @@ EOS
     string = 'The value is #{value}'
     assert_equal 'The value is #{value}', string
 
-    #я добавив
-    assert_equal "The value is \#{value}",string
   end
 
   def test_any_ruby_expression_may_be_interpolated
@@ -198,3 +196,65 @@ assert_equal ["the", "rain", "in", "spain"], words
     assert_equal false, a.object_id == b.object_id
   end
 end
+
+
+
+#My
+  def test_2
+    a = "It was the best of times"
+    b = "It was the worst of times"
+    assert_equal false, a[11..14] == b[11..14]
+end
+
+
+
+  #My
+  def test_plus_concatenation_will_leave_the_original_strings_unmodified_2
+    hi = "Hello, "
+    there = "Worldddd!"
+    string=hi+there[0..4]
+    assert_equal "Hello, World", string
+    assert_equal 12, string.size
+end
+
+
+#My
+  def test_4
+  a = "12345" 
+  b = 12345
+  assert_equal false, a == b
+  assert_equal true, a == b.to_s
+end
+
+#My
+  def test_2
+      s = "Hello"
+      b = s.replace("World")
+      assert_equal "World", s
+      assert_equal "World", b
+end
+
+
+  #My
+  def test_3
+      s = "abc"
+      b = s.reverse
+      assert_equal "abc", s
+      assert_equal "cba", b
+end
+
+#я написав метод, який отримує 
+#строку і повертає іншу строку, яка складається з першого 
+#і останнього слів отриманої, записані через кому. Я навчився
+#працювати із строками.
+
+  def first_end s
+    a=s.split
+    b=[a[0],a[a.length-1]]
+    b.join(", ")
+  end
+
+  def test_first_end
+    assert_equal "aaa, ccc",first_end("aaa bbb ccc")
+    assert_equal "ddt, tyut",first_end("ddt hfhgh, 76858 jhfjj? tyut")
+  end

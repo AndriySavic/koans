@@ -12,6 +12,17 @@ class AboutObjects < Neo::Koan
   def test_objects_can_be_converted_to_strings
     assert_equal "123", 123.to_s
     assert_equal "", nil.to_s
+
+
+
+    # my variants 
+    
+    assert_equal 12345.to_s(2) ,"11000000111001"
+    assert_equal 12345.to_s(16) ,"3039"
+    assert_equal 12345.to_s(10), 12345.to_s
+
+
+
   end
 
   def test_objects_can_be_inspected

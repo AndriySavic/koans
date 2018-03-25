@@ -188,3 +188,26 @@ class AboutClasses < Neo::Koan
   end
 
 end
+
+#в методі nsd я реалізував алгоритм Евкліда 
+#для пошуку найменшого спільного дільника двох чисел, та написав метод 
+#із тестами. Я навчився працювати із класами та методами.
+  class Evklid
+    def nsd (a,b)
+      while (a>0 && b>0)
+        if(a>b) 
+          a=a%b
+        else 
+          b=b%a
+        end
+      end
+      a+b
+    end
+  end
+
+  def test_nsd
+    alg =Evklid.new
+    assert_equal 2,alg.nsd(6,14)
+    assert_equal 3,alg.nsd(6,9)
+    assert_equal 9,alg.nsd(18,27)
+  end

@@ -31,3 +31,8 @@ class AboutTrueAndFalse < Neo::Koan
   end
 
 end
+
+ #My
+  def test_2
+    assert_equal :true_stuff, truth_value(false || true)
+end

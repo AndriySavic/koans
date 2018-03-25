@@ -160,3 +160,19 @@ class AboutRegularExpressions < Neo::Koan
     assert_equal "one t-t", "one two-three".gsub(/(t\w*)/) { $1[0, 1] }
   end
 end
+
+
+#My
+  def test_2
+      assert_equal ["1", "2", "3"], "one-1-two-2-three-3".scan(/\d/)
+  end
+
+  #My
+  def test_3
+      assert_equal ["3"], "one-1-two-2-three-3".scan(/\d+$/)
+  end
+
+   #My
+  def test_4
+      assert_equal ["one", "", "1", "", "two", "", "2", "", "three", "", "3", ""], "one-1-two-2-three-3".scan(/\w*/)
+end
